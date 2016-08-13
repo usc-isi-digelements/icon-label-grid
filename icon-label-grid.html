@@ -1,0 +1,127 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../icon-label/icon-label.html">
+<link rel="import" href="../iron-scroll-threshold/iron-scroll-threshold.html">
+
+<!--
+A polymer web component that shows a grid of icon-label components.
+
+Example:
+
+        <icon-label-grid
+          data="[[array]]">
+        </icon-label-grid>
+
+@demo demo/index.html
+-->
+
+<dom-module id="icon-label-grid">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      iron-scroll-threshold {
+        height: 100%;
+        max-height: 300px;
+      }
+
+      .grid-cell {
+        float: left;
+        height: 30px;
+        width: 33%;
+      }
+
+      .grid-item {
+        font-size: 14px;
+        overflow: hidden;
+        padding: 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      icon-label {
+        --icon-label-text: {
+          color: var(--secondary-text-color);
+        };
+
+        --icon-label-link-hover: {
+          color: var(--primary-text-color);
+        };
+      }
+    </style>
+
+    <iron-scroll-threshold>
+      <template is="dom-repeat" items="[[data]]" as="item">
+        <div class="grid-cell">
+          <div class="grid-item">
+            <icon-label title="Open [[getProperty(item, textProperty)]]"
+              icon="[[getProperty(item, iconProperty)]]"
+              icon-style-class="[[getProperty(item, iconStyleClassProperty)]]"
+              link="[[getProperty(item, linkProperty)]]"
+              text="[[getProperty(item, textProperty)]]">
+            </icon-label>
+          </div>
+        </div>
+      </template>
+    </iron-scroll-threshold>
+  </template>
+
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'icon-label-grid',
+
+      properties: {
+        /**
+         * The property for the icon in the data.
+         */
+        iconProperty: {
+          type: String,
+          value: 'icon'
+        },
+
+        /**
+         * The property for the style class of the icon in the data.
+         */
+        iconStyleClassProperty: {
+          type: String,
+          value: 'iconStyleClass'
+        },
+
+        /**
+         * The property for the link in the data.
+         */
+        linkProperty: {
+          type: String,
+          value: 'link'
+        },
+
+        /**
+         * The property for the text in the data.
+         */
+        textProperty: {
+          type: String,
+          value: 'text'
+        },
+
+        /**
+         * The data to show in the grid.
+         */
+        data: {
+          type: Array,
+          value: function() {
+            return [];
+          }
+        }
+      },
+
+      getProperty: function(item, property) {
+        return item[property];
+      }
+    });
+  })();
+  </script>
+</dom-module>
