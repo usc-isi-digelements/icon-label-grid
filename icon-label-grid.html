@@ -11,6 +11,12 @@ Example:
           data="[[array]]">
         </icon-label-grid>
 
+Custom mixins:
+
+        --icon-label-grid-cell-width (default 33%)
+        --primary-text-color
+        --secondary-text-color
+
 @demo demo/index.html
 -->
 
@@ -29,15 +35,19 @@ Example:
       .grid-cell {
         float: left;
         height: 30px;
-        width: 33%;
+        width: var(--icon-label-grid-cell-width, 33%);
       }
 
       .grid-item {
+        display: -webkit-box;
         font-size: 14px;
+        margin: 5px;
         overflow: hidden;
-        padding: 5px;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        white-space: normal;
+        word-break: break-all;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
 
       icon-label {

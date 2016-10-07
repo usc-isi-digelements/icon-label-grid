@@ -9,6 +9,14 @@ Example:
         </icon-label-grid>
 ```
 
+### Custom mixins:
+
+```
+        --icon-label-grid-cell-width (default 33%)
+        --primary-text-color
+        --secondary-text-color
+```
+
 ### Dependencies
 
 Dependencies are installed using [Bower](http://bower.io/):
