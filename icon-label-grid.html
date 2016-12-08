@@ -3,19 +3,19 @@
 <link rel="import" href="../iron-scroll-threshold/iron-scroll-threshold.html">
 
 <!--
-A polymer web component that shows a grid of icon-label components.
+A Polymer Element showing a grid of icon-label components.
 
-Example:
+### Example
 
-        <icon-label-grid
-          data="[[array]]">
-        </icon-label-grid>
+    <icon-label-grid data="[[array]]"></icon-label-grid>
 
-Custom mixins:
+### Styling
 
-        --icon-label-grid-cell-width (default 33%)
-        --primary-text-color
-        --secondary-text-color
+`<icon-label-grid>` provides the following custom properties and mixins for styling:
+
+Custom property                | Description             | Default
+-------------------------------|-------------------------|----------------------
+`--icon-label-grid-cell-width` | Width of each grid cell | 33%
 
 @demo demo/index.html
 -->
@@ -67,11 +67,11 @@ Custom mixins:
       <template is="dom-repeat" items="[[data]]" as="item">
         <div class="grid-cell">
           <div class="grid-item">
-            <icon-label title="Open [[getProperty(item, textProperty)]]"
-              icon="[[getProperty(item, iconProperty)]]"
-              icon-style-class="[[getProperty(item, iconStyleClassProperty)]]"
-              link="[[getProperty(item, linkProperty)]]"
-              text="[[getProperty(item, textProperty)]]">
+            <icon-label title="Open [[_getProperty(item, textProperty)]]"
+              icon="[[_getProperty(item, iconProperty)]]"
+              icon-style-class="[[_getProperty(item, iconStyleClassProperty)]]"
+              link="[[_getProperty(item, linkProperty)]]"
+              text="[[_getProperty(item, textProperty)]]">
             </icon-label>
           </div>
         </div>
@@ -89,6 +89,9 @@ Custom mixins:
       properties: {
         /**
          * The property for the icon in the data.
+         *
+         * @type {String}
+         * @default 'icon'
          */
         iconProperty: {
           type: String,
@@ -97,6 +100,9 @@ Custom mixins:
 
         /**
          * The property for the style class of the icon in the data.
+         *
+         * @type {String}
+         * @default 'iconStyleClass'
          */
         iconStyleClassProperty: {
           type: String,
@@ -105,6 +111,9 @@ Custom mixins:
 
         /**
          * The property for the link in the data.
+         *
+         * @type {String}
+         * @default 'link'
          */
         linkProperty: {
           type: String,
@@ -113,6 +122,9 @@ Custom mixins:
 
         /**
          * The property for the text in the data.
+         *
+         * @type {String}
+         * @default 'text'
          */
         textProperty: {
           type: String,
@@ -121,6 +133,9 @@ Custom mixins:
 
         /**
          * The data to show in the grid.
+         *
+         * @type {Array}
+         * @default []
          */
         data: {
           type: Array,
@@ -130,7 +145,15 @@ Custom mixins:
         }
       },
 
-      getProperty: function(item, property) {
+      /**
+       * Returns the given property in the given item.
+       *
+       * @type {Object} item
+       * @type {String} property
+       * @return
+       * @private
+       */
+      _getProperty: function(item, property) {
         return item[property];
       }
     });

@@ -16,11 +16,11 @@
 
   <script>
     suite('icon-label-grid tests', function() {
-      var component;
+      var element;
 
       setup(function(done) {
-        component = fixture('icon-label-grid-fixture');
-        component.data = [{
+        element = fixture('icon-label-grid-fixture');
+        element.data = [{
           icon: 'myIcon',
           iconStyleClass: 'myStyleClass',
           link: 'myLink',
@@ -32,16 +32,16 @@
       });
 
       test('properties equal default values', function() {
-        expect(component.iconProperty).to.equal('icon');
-        expect(component.iconStyleClassProperty).to.equal('iconStyleClass');
-        expect(component.linkProperty).to.equal('link');
-        expect(component.textProperty).to.equal('text');
+        expect(element.iconProperty).to.equal('icon');
+        expect(element.iconStyleClassProperty).to.equal('iconStyleClass');
+        expect(element.linkProperty).to.equal('link');
+        expect(element.textProperty).to.equal('text');
       });
 
       test('data list does equal input value', function() {
-        expect(component.data).to.exist;
-        expect(component.data).to.be.an('Array');
-        expect(component.data).to.be.deep.equal([{
+        expect(element.data).to.exist;
+        expect(element.data).to.be.an('Array');
+        expect(element.data).to.be.deep.equal([{
           icon: 'myIcon',
           iconStyleClass: 'myStyleClass',
           link: 'myLink',
@@ -49,15 +49,15 @@
         }]);
       });
 
-      test('getProperty does return correct values', function() {
-        expect(component.getProperty(component.data[0], component.iconProperty)).to.be.equal('myIcon');
-        expect(component.getProperty(component.data[0], component.iconStyleClassProperty)).to.be.equal('myStyleClass');
-        expect(component.getProperty(component.data[0], component.linkProperty)).to.be.equal('myLink');
-        expect(component.getProperty(component.data[0], component.textProperty)).to.be.equal('myText');
+      test('_getProperty does return correct values', function() {
+        expect(element._getProperty(element.data[0], element.iconProperty)).to.be.equal('myIcon');
+        expect(element._getProperty(element.data[0], element.iconStyleClassProperty)).to.be.equal('myStyleClass');
+        expect(element._getProperty(element.data[0], element.linkProperty)).to.be.equal('myLink');
+        expect(element._getProperty(element.data[0], element.textProperty)).to.be.equal('myText');
       });
 
       test('does show icon-label', function() {
-        var iconLabel = component.$$('icon-label');
+        var iconLabel = element.$$('icon-label');
         expect(iconLabel).to.exist;
         expect(iconLabel.icon).to.equal('myIcon');
         expect(iconLabel.iconStyleClass).to.equal('myStyleClass');
@@ -67,36 +67,36 @@
     });
 
     suite('icon-label-grid with data properties tests', function() {
-      var component;
+      var element;
 
       setup(function() {
-        component = fixture('icon-label-grid-fixture');
-        component.data = [{
+        element = fixture('icon-label-grid-fixture');
+        element.data = [{
           _icon: 'myIcon',
           _iconStyleClass: 'myStyleClass',
           _link: 'myLink',
           _text: 'myText',
         }];
-        component.iconProperty = '_icon';
-        component.iconStyleClassProperty = '_iconStyleClass';
-        component.linkProperty = '_link';
-        component.textProperty = '_text';
+        element.iconProperty = '_icon';
+        element.iconStyleClassProperty = '_iconStyleClass';
+        element.linkProperty = '_link';
+        element.textProperty = '_text';
         flush(function() {
           done();
         });
       });
 
       test('properties equal input values', function() {
-        expect(component.iconProperty).to.equal('_icon');
-        expect(component.iconStyleClassProperty).to.equal('_iconStyleClass');
-        expect(component.linkProperty).to.equal('_link');
-        expect(component.textProperty).to.equal('_text');
+        expect(element.iconProperty).to.equal('_icon');
+        expect(element.iconStyleClassProperty).to.equal('_iconStyleClass');
+        expect(element.linkProperty).to.equal('_link');
+        expect(element.textProperty).to.equal('_text');
       });
 
       test('data list does equal input value', function() {
-        expect(component.data).to.exist;
-        expect(component.data).to.be.an('Array');
-        expect(component.data).to.be.deep.equal([{
+        expect(element.data).to.exist;
+        expect(element.data).to.be.an('Array');
+        expect(element.data).to.be.deep.equal([{
           _icon: 'myIcon',
           _iconStyleClass: 'myStyleClass',
           _link: 'myLink',
@@ -104,15 +104,15 @@
         }]);
       });
 
-      test('getProperty does returns correct values', function() {
-        expect(component.getProperty(component.data[0], component.iconProperty)).to.be.equal('myIcon');
-        expect(component.getProperty(component.data[0], component.iconStyleClassProperty)).to.be.equal('myStyleClass');
-        expect(component.getProperty(component.data[0], component.linkProperty)).to.be.equal('myLink');
-        expect(component.getProperty(component.data[0], component.textProperty)).to.be.equal('myText');
+      test('_getProperty does returns correct values', function() {
+        expect(element._getProperty(element.data[0], element.iconProperty)).to.be.equal('myIcon');
+        expect(element._getProperty(element.data[0], element.iconStyleClassProperty)).to.be.equal('myStyleClass');
+        expect(element._getProperty(element.data[0], element.linkProperty)).to.be.equal('myLink');
+        expect(element._getProperty(element.data[0], element.textProperty)).to.be.equal('myText');
       });
 
       test('does show icon-label', function() {
-        var iconLabel = component.$$('icon-label');
+        var iconLabel = element.$$('icon-label');
         expect(iconLabel).to.exist;
         expect(iconLabel.icon).to.equal('myIcon');
         expect(iconLabel.iconStyleClass).to.equal('myStyleClass');

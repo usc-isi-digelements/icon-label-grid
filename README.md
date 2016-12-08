@@ -1,21 +1,19 @@
 # icon-label-grid
 
-A polymer web component that shows a grid of icon-label components.
+A Polymer Element showing a grid of icon-label components.
 
 Example:
 ```html
-        <icon-label-grid
-          data="[[array]]">
-        </icon-label-grid>
+    <icon-label-grid data="[[array]]"></icon-label-grid>
 ```
 
-### Custom mixins:
+### Styling
 
-```
-        --icon-label-grid-cell-width (default 33%)
-        --primary-text-color
-        --secondary-text-color
-```
+`<icon-label-grid>` provides the following custom properties and mixins for styling:
+
+Custom property                | Description             | Default
+-------------------------------|-------------------------|----------------------
+`--icon-label-grid-cell-width` | Width of each grid cell | 33%
 
 ### Dependencies
 
