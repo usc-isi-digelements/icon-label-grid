@@ -1,6 +1,6 @@
 # icon-label-grid
 
-A Polymer Element showing a grid of icon-label components.
+A Polymer Element showing a grid of icon-label elements.
 
 Example:
 ```html

@@ -4,7 +4,7 @@
   "authors": [
     "Next Century Corporation"
   ],
-  "description": "A Polymer Element showing a grid of icon-label components.",
+  "description": "A Polymer Element showing a grid of icon-label elements.",
   "keywords": [
     "web-component",
     "polymer"
