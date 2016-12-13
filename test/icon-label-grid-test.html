@@ -56,20 +56,22 @@
         expect(element._getProperty(element.data[0], element.textProperty)).to.be.equal('myText');
       });
 
-      test('does show icon-label', function() {
+      test('does show icon-label elements and has an iron-scroll-threshold', function() {
         var iconLabel = element.$$('icon-label');
         expect(iconLabel).to.exist;
         expect(iconLabel.icon).to.equal('myIcon');
         expect(iconLabel.iconStyleClass).to.equal('myStyleClass');
         expect(iconLabel.link).to.equal('myLink');
         expect(iconLabel.text).to.equal('myText');
+        expect(Polymer.dom(element.root).querySelectorAll('icon-label').length, element.data.length);
+        expect(element.$$('iron-scroll-threshold')).to.exist;
       });
     });
 
     suite('icon-label-grid with data properties tests', function() {
       var element;
 
-      setup(function() {
+      setup(function(done) {
         element = fixture('icon-label-grid-fixture');
         element.data = [{
           _icon: 'myIcon',
@@ -111,13 +113,15 @@
         expect(element._getProperty(element.data[0], element.textProperty)).to.be.equal('myText');
       });
 
-      test('does show icon-label', function() {
+      test('does show icon-label elements and has an iron-scroll-threshold', function() {
         var iconLabel = element.$$('icon-label');
         expect(iconLabel).to.exist;
         expect(iconLabel.icon).to.equal('myIcon');
         expect(iconLabel.iconStyleClass).to.equal('myStyleClass');
         expect(iconLabel.link).to.equal('myLink');
         expect(iconLabel.text).to.equal('myText');
+        expect(Polymer.dom(element.root).querySelectorAll('icon-label').length, element.data.length);
+        expect(element.$$('iron-scroll-threshold')).to.exist;
       });
     });
   </script>
