@@ -11,9 +11,11 @@ Example:
 
 `<icon-label-grid>` provides the following custom properties and mixins for styling:
 
-Custom property                | Description             | Default
--------------------------------|-------------------------|----------------------
-`--icon-label-grid-cell-width` | Width of each grid cell | 33%
+Custom property                | Description                         | Default
+-------------------------------|-------------------------------------|--------
+`--icon-label-grid-cell-width` | Grid cell width                     | 33%
+`--icon-label-grid-link-color` | Icon label link text color on hover | --secondary-text-color
+`--icon-label-grid-text-color` | Icon label text color               | --primary-text-color
 
 ### Dependencies
 
