@@ -18,18 +18,19 @@ limitations under the License.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
   <link rel="import" href="../icon-label-grid.html">
 </head>
 
 <body unresolved>
-  <template is="dom-bind" id="demo">
-    <p>Data: [{ icon: 'icons:polymer', text: 'See Me' }, { icon: 'icons:open-in-new', iconStyleClass: 'custom', link: 'https://nextcentury.com', text: 'Click Me' }]
+  <dom-bind id="demo">
+    <template is="dom-bind">
+      <p>Data: [{ icon: 'account-circle', text: 'See Me' }, { icon: 'open-in-browser', iconStyleClass: 'custom', link: 'https://nextcentury.com', text: 'Click Me' }]
 
-    <icon-label-grid
-      data='[{"icon":"icons:polymer","text":"See Me"},{"icon":"icons:open-in-new","iconStyleClass":"custom","link":"https://nextcentury.com","text":"Click Me"}]'>
-    </icon-label-grid>
-  </template>
-  </script>
+      <icon-label-grid
+        data='[{"icon":"account-circle","text":"See Me"},{"icon":"open-in-browser","iconStyleClass":"custom","link":"https://nextcentury.com","text":"Click Me"}]'>
+      </icon-label-grid>
+    </template>
+  </dom-bind>
 </body>
 </html>
