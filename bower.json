@@ -1,7 +1,7 @@
 {
   "name": "icon-label-grid",
   "description": "A Polymer Element showing a grid of icon-label elements.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
   "keywords": [
@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "icon-label": "DigElements/icon-label#^2.0.0",
+    "icon-label": "DigElements/icon-label#2.1.7",
     "iron-scroll-threshold": "PolymerElements/iron-scroll-threshold#^2.0.0"
   },
   "devDependencies": {
