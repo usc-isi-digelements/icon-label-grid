@@ -9,14 +9,14 @@
     "polymer"
   ],
   "main": "icon-label-grid.html",
-  "homepage": "https://github.com/DigElements/icon-label-grid/",
+  "homepage": "https://github.com/usc-isi-digelements/icon-label-grid/",
   "ignore": [
     "/.*",
     "/test/"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "icon-label": "DigElements/icon-label#2.1.7",
+    "icon-label": "usc-isi-digelements/icon-label#2.1.7",
     "iron-scroll-threshold": "PolymerElements/iron-scroll-threshold#^2.0.0"
   },
   "devDependencies": {
