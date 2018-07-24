@@ -1,22 +1,16 @@
 {
   "name": "icon-label-grid",
   "description": "A Polymer Element showing a grid of icon-label elements.",
-  "version": "2.0.1",
+  "version": "2.0.2x",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
-  "keywords": [
-    "web-component",
-    "polymer"
-  ],
+  "keywords": ["web-component", "polymer"],
   "main": "icon-label-grid.html",
   "homepage": "https://github.com/usc-isi-digelements/icon-label-grid/",
-  "ignore": [
-    "/.*",
-    "/test/"
-  ],
+  "ignore": ["/.*", "/test/"],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.2",
-    "icon-label": "usc-isi-digelements/icon-label#2.1.7",
+    "icon-label": "usc-isi-digelements/icon-label#^2.2.1",
     "iron-scroll-threshold": "PolymerElements/iron-scroll-threshold#^2.0.0"
   },
   "devDependencies": {
